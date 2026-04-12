@@ -51,9 +51,9 @@ def unpack_archive(file: Path, target_folder: Path):
 
     try:
         shutil.unpack_archive(str(file), str(extract_path))
-        print(f"📦 Розпаковано: {file.name}")
+        print(f" Розпаковано: {file.name}")
     except shutil.ReadError:
-        print(f"❌ Не вдалося розпакувати: {file.name}")
+        print(f" Не вдалося розпакувати: {file.name}")
 
 
 def process_file(file: Path, base_path: Path):
@@ -69,7 +69,7 @@ def process_file(file: Path, base_path: Path):
         file.unlink()  # видаляємо архів
     else:
         shutil.move(str(file), str(target_file))
-        print(f"✅ {file.name} → {category}")
+        print(f" {file.name} → {category}")
 
 
 def sort_folder(path: Path, base_path: Path):
@@ -88,7 +88,7 @@ def sort_folder(path: Path, base_path: Path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("❗ Вкажи шлях до папки")
+        print(" Вкажи шлях до папки")
         sys.exit(1)
 
     folder_path = Path(sys.argv[1])
