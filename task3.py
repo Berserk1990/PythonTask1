@@ -66,24 +66,35 @@ def parser(user_input):
         return "unknown", []
 
 
-contacts = {}
+def main():
+    contacts = {}
 
-while True:
-    user_input = input(">>> ")
-    command, data = parser(user_input)
+    while True:
+        user_input = input(">>> ")
+        command, data = parser(user_input)
 
-    if command == "hello":
-        print("How can I help you?")
-    elif command == "add":
-         print(add_contact(data, contacts))
-    elif command == "change":
-        print(change_contact(data, contacts))
-    elif command == "phone":
-        print(phone_contact(data, contacts))
-    elif command == "show all":
-        print(show_all(contacts))
-    elif command == "exit":
-        print("Good bye!")
-        break
-    else:
-        print("Unknown command")
+        if command == "hello":
+            print("How can I help you?")
+
+        elif command == "add":
+            print(add_contact(data, contacts))
+
+        elif command == "change":
+            print(change_contact(data, contacts))
+
+        elif command == "phone":
+            print(phone_contact(data, contacts))
+
+        elif command == "show all":
+            print(show_all(contacts))
+
+        elif command == "exit":
+            print("Good bye!")
+            break
+
+        else:
+            print("Unknown command")
+
+
+if __name__ == "__main__":
+    main()
